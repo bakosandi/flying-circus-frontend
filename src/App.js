@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import UserContext from "./UserContext";
+import UserContext from "./components/UserContext";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
