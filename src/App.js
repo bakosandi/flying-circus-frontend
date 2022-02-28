@@ -1,19 +1,21 @@
-import Signup from "./Signup";
-import Login from "./Login";
+import { Routes, Route } from "react-router-dom";
+import UserContext from "./UserContext";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Profile from "./components/Profile";
 
 function App() {
-  const handleSignupOnSuccess = () => {
-    console.log("Done");
-  };
-  const handleLoginOnSuccess = () => {
-    console.log("Done login");
-  };
-
   return (
-    <div className="App">
-      <Signup onSuccess={handleSignupOnSuccess} />
-      <Login onSuccess={handleLoginOnSuccess} />
-    </div>
+    <UserContext>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<h1>Flying circus</h1>} />
+          <Route path="/register" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </div>
+    </UserContext>
   );
 }
 

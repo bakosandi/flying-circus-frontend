@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const UserForm = (props) => {
+const Userform = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,7 +18,6 @@ const UserForm = (props) => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -44,4 +43,4 @@ const UserForm = (props) => {
   );
 };
 
-export default UserForm;
+export default Userform;

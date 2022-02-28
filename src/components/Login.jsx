@@ -1,12 +1,16 @@
-import { useState } from "react";
 import UserForm from "./UserForm";
+import { useState, useContext } from "react";
+import { userContext } from "./UserContext";
+import { useNavigate } from "react-router-dom";
+import Google from "./Google";
 
-const login = (email, password) => {
+const apiLogin = (email, password) => {
   let status = true;
-  return fetch("/signin", {
+
+  return fetch("/api/signin", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-type": "application/json",
     },
     body: JSON.stringify({ email, password }),
   }).then((res) => {
@@ -20,13 +24,16 @@ const login = (email, password) => {
 const Login = (props) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const { login } = useContext(userContext);
+  const navigate = useNavigate();
 
   const handleLogin = (email, password) => {
     setError(null);
     setLoading(true);
-    login(email, password)
-      .then(() => {
-        props.onSuccess();
+    apiLogin(email, password)
+      .then((user) => {
+        login(user);
+        navigate("/");
       })
       .catch((err) => {
         setError(err);
@@ -41,6 +48,7 @@ const Login = (props) => {
       <h2>Login</h2>
       {error ? <p>{error?.message ?? "unknow error"}</p> : null}
       <UserForm onSubmit={handleLogin} loading={loading} />
+      <Google />
     </div>
   );
 };
