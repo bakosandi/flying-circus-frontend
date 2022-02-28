@@ -1,8 +1,8 @@
-import { Routes, Route } from "react-router-dom";
-import UserContext from "./components/UserContext";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import UserContext from "./components/UserContext";
 import Profile from "./components/Profile";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
