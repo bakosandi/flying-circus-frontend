@@ -1,6 +1,4 @@
-import Signup from "./components/Signup";
-import Login from "./components/Login";
-import UserContext from "./components/UserContext";
+import { Login, Signup, UserContext } from "./components/Auth";
 import Profile from "./components/Profile";
 import { Routes, Route } from "react-router-dom";
 import EnglishTest from "./components/EnglishTest";

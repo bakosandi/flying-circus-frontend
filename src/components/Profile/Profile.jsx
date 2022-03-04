@@ -1,4 +1,4 @@
-import loginGuard from "./loginGuard";
+import { loginGuard } from "../Auth";
 
 const Profile = (props) => {
   const user = props.user;
@@ -10,4 +10,4 @@ const Profile = (props) => {
   );
 };
 
-export default loginGuard(Profile);
+export default Profile(loginGuard);

@@ -1,4 +1,4 @@
-import loginGuard from "./loginGuard";
+import { loginGuard } from "../Auth/";
 import { useCallback, useEffect, useState } from "react";
 import Question from "./Question";
 
