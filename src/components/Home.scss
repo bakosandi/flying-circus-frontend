@@ -1,0 +1,14 @@
+@import "../colors.scss";
+@import "../layout.scss";
+
+.width-base-text-color {
+  color: $text-color;
+}
+
+.home {
+  padding: $base-padding;
+  p,
+  h1 {
+    @extend .width-base-text-color;
+  }
+}
