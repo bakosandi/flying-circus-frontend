@@ -52,9 +52,12 @@ const Signup = (props) => {
   };
   return (
     <div>
-      <h2>Registration</h2>
       {error ? <p>{error?.message ?? "unknow error"}</p> : null}
-      <UserForm onSubmit={handleSignup} loading={loading} />
+      <UserForm
+        onSubmit={handleSignup}
+        loading={loading}
+        title="Registration"
+      />
       <Google />
     </div>
   );

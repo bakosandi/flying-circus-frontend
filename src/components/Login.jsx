@@ -45,9 +45,8 @@ const Login = (props) => {
   };
   return (
     <div>
-      <h2>Login</h2>
       {error ? <p>{error?.message ?? "unknow error"}</p> : null}
-      <UserForm onSubmit={handleLogin} loading={loading} />
+      <UserForm onSubmit={handleLogin} loading={loading} title="Login" />
       <Google />
     </div>
   );
